@@ -1,0 +1,20 @@
+// src/components/ButtonComponent.jsx
+
+import React from 'react';
+import { Button } from 'primereact/button';
+
+/**
+ * Componente reutilizable de Button.
+ * Props:
+ * - label: Texto del botón.
+ * - onClick: Función que se ejecuta al hacer clic en el botón.
+ * - icon: Icono (opcional) para el botón (por ejemplo, 'pi pi-check').
+ * - type: Tipo de botón (button, submit, etc.).
+ */
+const ButtonComponent = ({ label, onClick, icon, type = 'button' }) => {
+  return (
+    <Button label={label} icon={icon} onClick={onClick} type={type} className="p-button-raised p-button-primary" />
+  );
+};
+
+export default ButtonComponent;
