@@ -1,28 +1,18 @@
-// src/App.jsx
+import 'primereact/resources/themes/saga-blue/theme.css';  
+import 'primereact/resources/primereact.min.css';         
+import 'primeicons/primeicons.css';                        
+import LoginView from './views/LoginView';
+import { Routes, Route } from 'react-router-dom';
+import AdminView from './views/AdminView.jsx'
+import UsuarioView from './views/UsuarioView.jsx'
 
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './views/home';
-import Users from './views/Users';
-import Payments from './views/Payments';
-import './App.css'; // Incluye los estilos principales
-
-/**
- * Componente principal de la aplicación.
- * Aquí se configuran las rutas de la aplicación, que permiten cambiar entre las vistas.
- */
 function App() {
   return (
-    <Router>
-      <div className="app">
-        {/* Aquí se definen las rutas principales */}
-        <Routes>
-          <Route path="/" element={<Payments />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/payments" element={<Payments />} />
-        </Routes>
-      </div>
-    </Router>
+    <Routes>
+        <Route path="/" element={<LoginView />} />
+        <Route path="/admin" element={<AdminView />} />
+        <Route path="/usuario" element={<UsuarioView/>} />
+    </Routes>
   );
 }
 
